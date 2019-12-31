@@ -127,12 +127,12 @@ public class Game {
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 		
-		int col;
 		char ans, currentMark;
+		char [][] board = new char [6][7];
+		
+		System.out.println("Designate players. Player 1 has red chips and Player 2 has yellow chips.");
 		currentMark = 'R';
 		ans = ' ';
-		
-		char [][] board = new char [6][7];
 		
 		//Sets up blank board & prints it
 		initializeBoard(board);
@@ -142,7 +142,7 @@ public class Game {
 		
 		do {
 		//Takes column # from user
-		col = getInput(board[0].length);
+		int col = getInput(board[0].length);
 		
 		//Checks if column is full
 		if(tryDropChip(board, col, currentMark)) {
@@ -175,7 +175,7 @@ public class Game {
 			else {
 				//If ans is not yes then final score for each player is printed
 				System.out.println("Player 1: " + player1Count + " Wins");
-				System.out.println("Player 2:  " + player2Count + " Wins");
+				System.out.println("Player 2: " + player2Count + " Wins");
 				gameOver = true;
 			}
 		}
