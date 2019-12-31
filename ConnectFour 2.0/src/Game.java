@@ -130,7 +130,7 @@ public class Game {
 		char ans, currentMark;
 		char [][] board = new char [6][7];
 		
-		System.out.println("Designate players. Player 1 has red chips and Player 2 has yellow chips.");
+		System.out.println("Choose players. Player 1 has red chips and Player 2 has yellow chips.");
 		currentMark = 'R';
 		ans = ' ';
 		
