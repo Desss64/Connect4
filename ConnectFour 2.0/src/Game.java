@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Game {
+public class Game {	
 	
 	static int player1Count;
 	static int player2Count;
@@ -123,16 +123,32 @@ public class Game {
 		}
 		return false;
 	}
-
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 		
 		char ans, currentMark;
+		ans = ' ';
 		char [][] board = new char [6][7];
+		char [] arr = {'R', 'Y'};
 		
 		System.out.println("Choose players. Player 1 has red chips and Player 2 has yellow chips.");
-		currentMark = 'R';
-		ans = ' ';
+		System.out.println("Done choosing? Y/y for yes. N/n for no.");
+		ans = kb.next().charAt(0);
+	    
+		while(ans != 'Y' && ans != 'y') {
+			System.out.println("Made a decision?");
+			ans = kb.next().charAt(0);
+		}
+		
+		//Randomly chooses who goes first
+		java.util.Random random = new java.util.Random();
+		currentMark = arr[random.nextInt(2)];
+		if(currentMark == 'R') {
+			System.out.println("Player 1 goes first");
+		}
+		else {
+			System.out.println("Player 2 goes first");
+		}
 		
 		//Sets up blank board & prints it
 		initializeBoard(board);
